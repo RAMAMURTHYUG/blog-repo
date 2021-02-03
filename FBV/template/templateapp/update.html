@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% extends "templateapp/parent.html" %}
+
+
+  <body>
+    {% block for_child %}
+    <h1> Update form</h1>
+    <form  method="post">
+      Employee Number:<input type="text" name="eno" value="{{emp.eno}}"><br><br>
+          Employee Name:<input type="text" name="ename" value="{{emp.ename}}"><br><br>
+              Employee Salary:<input type="text" name="esal" value="{{emp.esal}}"><br><br>
+                  Employee adress:<input type="text" name="eaddr" value="{{emp.eaddr}}"><br><br>
+                  {{form.as_p}}
+                  {% csrf_token %}
+                  <input type="submit" class="btn btn-lg btn-primary" value="submit">
+
+    </form>
+    {% endblock %}
+
+  </body>
+</html>
